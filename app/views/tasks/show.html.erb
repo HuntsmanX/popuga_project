@@ -1,0 +1,29 @@
+<section class="hero is-primary is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+          <p id="notice"><%= notice %></p>
+
+          <p>
+            <strong>Title:</strong>
+            <%= @task.title %>
+          </p>
+
+          <p>
+            <strong>Description:</strong>
+            <%= @task.description %>
+          </p>
+
+          <p>
+            <strong>Status:</strong>
+            <%= @task.status %>
+          </p>
+
+          <%= link_to 'Edit', edit_task_path(@task) %> |
+          <%= link_to 'Back', tasks_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

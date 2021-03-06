@@ -1,0 +1,50 @@
+<section class="hero is-primary is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+          <%= form_with(model: task, local: true) do |form| %>
+            <% if task.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+                <ul>
+                  <% task.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="field">
+              <%= form.label :title, class: "label" %>
+              <div class="control">
+                <%= form.text_field :title, id: :task_title, class: "input", placeholder: "Text input" %>
+              </div>
+            </div>
+
+            <div class="field">
+              <%= form.label :description, class: "label" %>
+              <div class="control">
+                <%= form.text_area :description, id: :task_description, class: "input", placeholder: "Description" %>
+              </div>
+            </div>
+
+            <div class="field">
+              <%= form.label :status, class: "label" %>
+              <div class="control">
+                <div class="select">
+                  <%= form.select(:status, Task.statuses.keys.map { |key| [key.humanize, key] }) %>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions">
+              <%= form.submit class: "button is-link is-light" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
