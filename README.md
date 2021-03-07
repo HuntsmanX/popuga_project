@@ -105,11 +105,12 @@
           * **Command** — Sort task card
           * **Data** - Dataset with task card
           * **Event** - Task cards sorted
-#Images
-##domains
+         
+# Images
+## domains
 ![Domains](images/domains.png)
-##models
+## models
 ![Models](images/models.png)
-##Storming
+## Storming
 ![Sticks](images/sticks.png)
 
